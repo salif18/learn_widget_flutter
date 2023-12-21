@@ -29,26 +29,32 @@ class _MyModalState extends State<MyModal> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(15),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          labelText: "name",
-                          contentPadding: EdgeInsets.all(10),
+                      child: Container(
+                        width: double.infinity,
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            labelText: "name",
+                            contentPadding: EdgeInsets.all(10),
+                          ),
                         ),
                       ),
                     ),
-                    DropdownButton<String>(
-                      value: selectedOptionValue,
-                      items: optionsList.map((option) {
-                        return DropdownMenuItem<String>(
-                          value: option,
-                          child: Text(option),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        setState(() => selectedOptionValue = value);
-                      },
+                    Container(
+                      width: double.infinity,
+                      child: DropdownButton<String>(
+                        value: selectedOptionValue,
+                        items: optionsList.map((option) {
+                          return DropdownMenuItem<String>(
+                            value: option,
+                            child: Text(option),
+                          );
+                        }).toList(),
+                        onChanged: (value) {
+                          setState(() => selectedOptionValue = value);
+                        },
+                      ),
                     ),
                   ],
                 ),

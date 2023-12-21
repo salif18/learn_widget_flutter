@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/appbar/myappbar.dart';
-import 'package:learn_flutter/modalwindow/window_modal.dart';
+import 'package:learn_flutter/widgets/appbar/myappbar.dart';
+
+import 'package:learn_flutter/widgets/modalwindow/modalbottom.dart';
+import 'package:learn_flutter/widgets/showdialog/showdialog.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key, required this.keydrawer});
@@ -45,8 +47,12 @@ class MyHome extends StatelessWidget {
                                 size: 33, color: Colors.green),
                           ),
                         ),
-                        const SizedBox(height: 150,),
+                        const SizedBox(height: 100,),
                         const MyModal(),
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                          child:MyShowModal()
+                        ),
                       ],
                     ),
                   ],
