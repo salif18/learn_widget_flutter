@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class SignupWidget extends StatefulWidget {
   const SignupWidget(
       {super.key});
@@ -12,32 +13,46 @@ class SignupWidget extends StatefulWidget {
 
 class _SignupWidgetState extends State<SignupWidget> {
   final _formkey = GlobalKey<FormState>();
-  final TextEditingController _pseudoController = TextEditingController();
-  final TextEditingController _numeroController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final _pseudoController = TextEditingController();
+  final _numeroController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   _senData() {
     if (_formkey.currentState!.validate()) {
       final pseudo = _pseudoController.text;
-      final numero = _numeroController;
+      final numero = _numeroController.text;
       final email = _emailController.text;
       final password = _passwordController.text;
-      CollectionReference eventsRef =
+      CollectionReference users =
        FirebaseFirestore.instance.collection("users");
-       eventsRef.add({
+       users.add({
         "pseudo":pseudo,
         "numero":numero,
         "email":email, 
         "password":password
+       }).then((value){
+        return "user add avec succes";
+       })
+       .catchError((error){
+        return "add failed $error";
        });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0, 
+        backgroundColor:Colors.green[100],
+        title: Text("Inscritpion", style: GoogleFonts.roboto( fontSize: 25, fontWeight: FontWeight.w600),),
+        centerTitle: true, 
+      ),
+      body:SingleChildScrollView(
+        child:Container(
       padding: const EdgeInsets.all(20),
+      color:Colors.white,
       child: Form(
         key: _formkey,
         child: Column(children: [
@@ -155,6 +170,8 @@ class _SignupWidgetState extends State<SignupWidget> {
             ),
           ),
         ]),
+      ),
+        ),
       ),
     );
   }

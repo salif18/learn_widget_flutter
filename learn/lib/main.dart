@@ -1,17 +1,17 @@
 import "package:flutter/material.dart";
 import "package:learn_flutter/BottomTabNavigation/bottomNavigation.dart";
-import "package:learn_flutter/auth/authentification.dart";
+import 'package:learn_flutter/screens/auth/authentification.dart';
 import 'package:learn_flutter/screens/galeries/galeries_mode_tabbarview.dart';
 import "package:learn_flutter/drawer/drawer.dart";
 import "package:learn_flutter/screens/home/home.dart";
 import "package:learn_flutter/screens/search/search.dart";
-// import 'package:firebase_core/firebase_core.dart';
 
 
 
-void main()async{
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+
+
+void main(){
+
   runApp(const MyApp());
   }
 
@@ -23,6 +23,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final GlobalKey<ScaffoldState> _keydrawer = GlobalKey<ScaffoldState>();
+
   int _currentIndex = 0;
 
   void _selectIndex(index) {
@@ -37,9 +39,10 @@ class _MyAppState extends State<MyApp> {
         title: "Demo",
         debugShowCheckedModeBanner: false,
         home: Scaffold(
+          key:_keydrawer,
           drawer: const MyDrawer(),
           body: [
-            const MyHome(),
+            MyHome(keydrawer:_keydrawer),
             const MySearch(),
             const MyPhotos(),
             const MyAuthentification(),

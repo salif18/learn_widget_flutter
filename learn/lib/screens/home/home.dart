@@ -1,19 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/appbar/myappbar.dart';
+import 'package:learn_flutter/modalwindow/window_modal.dart';
 
 class MyHome extends StatelessWidget {
-  const MyHome({super.key});
+  const MyHome({super.key, required this.keydrawer});
+
+  final keydrawer;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
-      body:SingleChildScrollView(
-        child:Column(
-          children: [ 
-
-          ],
-        )
+      appBar: MyAppBar(
+        keydrawer: keydrawer,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 100,
+                          margin: const EdgeInsets.only(left: 20, top: 20),
+                          child: FloatingActionButton(
+                            onPressed: () {},
+                            child: const Icon(Icons.add_a_photo_outlined,
+                                size: 33, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          width: 100,
+                          height: 100,
+                          margin: const EdgeInsets.only(left: 20, top: 20),
+                          child: FloatingActionButton(
+                            onPressed: () {},
+                            child: const Icon(Icons.camera,
+                                size: 33, color: Colors.green),
+                          ),
+                        ),
+                        const SizedBox(height: 150,),
+                        const MyModal(),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            )),
       ),
     );
   }
