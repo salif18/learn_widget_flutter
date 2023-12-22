@@ -19,13 +19,20 @@ class _LoginWidgetState extends State<LoginWidget> {
     if (_formkey.currentState!.validate()) {
       final pseudo = _pseudoController.value.text;
       final password = _passwordController.value.text;
-      FirebaseFirestore.instance
-          .collection("users")
-          .add({"pseudo": pseudo, "password": password}).then((value) {
-        return "save with success";
-      }).catchError((err) {
-        return "error $err";
-      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Envois en cours..."))
+      );
+      FocusScope.of(context).requestFocus(FocusNode());
+
+      // FirebaseFirestore.instance
+      //     .collection("users")
+      //     .add({"pseudo": pseudo, "password": password}).then((value) {
+      //   return "save with success";
+      // }).catchError((err) {
+      //   return "error $err";
+      // });
+
     }
   }
 

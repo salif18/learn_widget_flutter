@@ -11,7 +11,7 @@ class MySearch extends StatefulWidget {
 class _MySearchState extends State<MySearch> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [ 
