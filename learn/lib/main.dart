@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:learn_flutter/widgets/BottomTabNavigation/bottomNavigation.dart';
 import 'package:learn_flutter/screens/galeries/galeries_mode_tabbarview.dart';
+import 'package:learn_flutter/screens/carousels/caroussel.dart';
 import 'package:learn_flutter/widgets/drawer/drawer.dart';
 import "package:learn_flutter/screens/home/home.dart";
 import "package:learn_flutter/screens/search/search.dart";
@@ -30,7 +31,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Demo",
+        title: "sCloud Driver",
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           key: _keydrawer,
@@ -39,8 +40,9 @@ class _MyAppState extends State<MyApp> {
             MyHome(keydrawer: _keydrawer),
             const MySearch(),
             const MyPhotos(),
+            const MyCarouselExample()
           ][_currentIndex],
-          bottomNavigationBar: myBottomNavigationBarState(
+          bottomNavigationBar: MyBottomNavigationBarState(
               currentIndex: _currentIndex, selectIndex: _selectIndex),
         ));
   }

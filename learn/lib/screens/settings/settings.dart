@@ -39,25 +39,25 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               RadioListTile(
                   activeColor: Colors.green,
-                  title: const Text("Anglais"),
+                  title: Text("Anglais", style:GoogleFonts.roboto(fontSize:20 ,fontWeight: FontWeight.w500 )),
                   value: Langues.anglais,
                   groupValue: selectValue,
                   onChanged: (value) => selectRadio(value)),
               RadioListTile(
                   activeColor: Colors.green,
-                  title: const Text("Arabe"),
+                  title: Text("Arabe",style:GoogleFonts.roboto(fontSize:20 ,fontWeight: FontWeight.w500)),
                   value: Langues.arabe,
                   groupValue: selectValue,
                   onChanged: (value) => selectRadio(value)),
               RadioListTile(
                   activeColor: Colors.green,
-                  title: const Text("Francais"),
+                  title: Text("Francais",style:GoogleFonts.roboto(fontSize:20 ,fontWeight: FontWeight.w500)),
                   value: Langues.francais,
                   groupValue: selectValue,
                   onChanged: (value) => selectRadio(value)),
               RadioListTile(
                   activeColor: Colors.green,
-                  title: const Text("Chine"),
+                  title: Text("Chine", style:GoogleFonts.roboto(fontSize:20 ,fontWeight: FontWeight.w500)),
                   value: Langues.chine,
                   groupValue: selectValue,
                   onChanged: (value) => selectRadio(value))

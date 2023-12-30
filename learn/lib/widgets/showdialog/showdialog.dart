@@ -22,7 +22,7 @@ class _MyModalState extends State<MyModal> {
             return AlertDialog(
               title: const Text("Ajouter un contenu"),
               content: SizedBox(
-                width: 350,
+                width: 390,
                 child: Column(
                   children: [
                     Padding(
@@ -45,6 +45,7 @@ class _MyModalState extends State<MyModal> {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(width: 1, color: Colors.grey),
                         ),
@@ -106,7 +107,7 @@ class _MyModalState extends State<MyModal> {
           },
         );
       },
-      child: const Icon(Icons.add, size: 30),
+      child: const Icon(Icons.add, color:Colors.green,size: 30),
     );
   }
 }

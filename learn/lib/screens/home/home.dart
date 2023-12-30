@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/widgets/appbar/myappbar.dart';
+import 'package:learn_flutter/widgets/caroussels/carousel.dart';
+import 'package:learn_flutter/screens/carousels/caroussel.dart';
 
 import 'package:learn_flutter/widgets/modalwindow/modalbottom.dart';
 import 'package:learn_flutter/widgets/showdialog/showdialog.dart';
@@ -13,6 +15,7 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: MyAppBar(
         keydrawer: keydrawer,
       ),
@@ -49,7 +52,7 @@ class MyHome extends StatelessWidget {
                         ),
                         const SizedBox(height: 100,),
                         const MyModal(),
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.all(10),
                           child:MyShowModal()
                         ),
@@ -57,6 +60,7 @@ class MyHome extends StatelessWidget {
                     ),
                   ],
                 ),
+                MyCarousel(),
               ],
             )),
       ),

@@ -25,7 +25,7 @@ class MyPhotos extends StatelessWidget {
             ])),
         body: TabBarView(children: [
           Tab(child: Photos()),
-          Tab(child: GridViewVideos()),
+          const Tab(child: GridViewVideos()),
         ]),
       ),
     );

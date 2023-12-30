@@ -21,6 +21,7 @@ changeSlider(value){
       value: _currentSliderValue,
       min: 0,
       max:100,
+      activeColor: Colors.green[300],
       label: _currentSliderValue.round().toString(),
       onChanged: (value)=>changeSlider(value),
       );
