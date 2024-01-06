@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:learn_flutter/screens/statistiques/stats.dart';
 import 'package:learn_flutter/widgets/BottomTabNavigation/bottomNavigation.dart';
 import 'package:learn_flutter/screens/galeries/galeries_mode_tabbarview.dart';
 import 'package:learn_flutter/screens/carousels/caroussel.dart';
@@ -38,6 +39,7 @@ class _MyAppState extends State<MyApp> {
           drawer: const MyDrawer(),
           body: [
             MyHome(keydrawer: _keydrawer),
+            const Statistics(),
             const MySearch(),
             const MyPhotos(),
             const MyCarouselExample()

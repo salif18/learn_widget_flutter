@@ -41,6 +41,7 @@ dependencies:
   carousel_slider: ^4.2.1
   dots_indicator: ^2.0.0
   video_player: ^2.8.1
+  fl_chart: ^0.66.0
 
 dev_dependencies:
   flutter_test:

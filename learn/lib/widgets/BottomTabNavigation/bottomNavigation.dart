@@ -22,7 +22,9 @@ class MyBottomNavigationBarState extends StatelessWidget {
         BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_customize_outlined, size: 33),
             label: ''),
-
+        BottomNavigationBarItem(
+          icon:Icon(Icons.graphic_eq, size: 33,), label:""
+        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search, size: 33), label: '',
           ),
